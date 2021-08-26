@@ -3,29 +3,33 @@ import React from "react";
 //styles
 import "@styles/components/CarouselItem.scss";
 
+//Iocns
+import playIcon from "@static/play-icon.png";
+import plusIcon from "@static/plus-icon.png";
+
 export default function CarouselItem() {
 	return (
-		<div class="carousel-item">
+		<div className="carousel-item">
 			<img
-				class="carousel-item__img"
+				className="carousel-item__img"
 				src="https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260"
 				alt=""
 			/>
-			<div class="carousel-item__details">
+			<div className="carousel-item__details">
 				<div>
 					<img
-						class="carousel-item__details--img"
-						src="../assets/play-icon.png"
+						className="carousel-item__details--img"
+						src={playIcon}
 						alt="Play Icon"
 					/>
 					<img
-						class="carousel-item__details--img"
-						src="../assets/plus-icon.png"
+						className="carousel-item__details--img"
+						src={plusIcon}
 						alt="Plus Icon"
 					/>
 				</div>
-				<p class="carousel-item__details--title">Título descriptivo</p>
-				<p class="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+				<p className="carousel-item__details--title">Título descriptivo</p>
+				<p className="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
 			</div>
 		</div>
 	);

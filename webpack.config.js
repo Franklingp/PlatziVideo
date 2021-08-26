@@ -14,6 +14,7 @@ module.exports = {
         alias: {
             "@styles": path.resolve(__dirname, "src/assets/styles"),
             "@components": path.resolve(__dirname, "src/components"),
+            "@static": path.resolve(__dirname, "src/assets/static"),
         },
     },
     module: {
@@ -39,6 +40,15 @@ module.exports = {
                     "sass-loader",
                 ],
             },
+            {
+                test: /\.(png|jpg|gif)/,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "assets/static/[hash].[ext]"
+                    }
+                }
+            }
         ],
     },
     plugins: [
@@ -47,7 +57,7 @@ module.exports = {
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({
-            filename: "assets/[name].css",
+            filename: "assets/[name].[contenthash].css",
         }),
     ],
 }
