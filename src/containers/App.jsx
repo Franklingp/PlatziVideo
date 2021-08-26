@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 //Components
 import Header from "@components/Header";
@@ -12,6 +12,23 @@ import Footer from "../components/Footer";
 import "../assets/styles/App.scss";
 
 export default function App() {
+	const [videos, setVideos] = useState({});
+
+	//method to get info from fake api
+	const getInfo = () => {
+		fetch("http://localhost:3000/initalState")
+			.then((response) => response.json())
+			.then((data) => setVideos(data))
+			.catch((e) => {
+				alert("Hubo un error al intentar obtener la informacion del api");
+				console.log(e);
+			});
+	};
+
+	useEffect(() => {
+		getInfo();
+	}, []);
+
 	return (
 		<div id="App">
 			<Header />
