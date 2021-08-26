@@ -10,7 +10,11 @@ module.exports = {
         clean: true,
     },
     resolve: {
-        extensions: [".js", ".jsx"]
+        extensions: [".js", ".jsx"],
+        alias: {
+            "@styles": path.resolve(__dirname, "src/assets/styles"),
+            "@components": path.resolve(__dirname, "src/components"),
+        },
     },
     module: {
         rules: [
@@ -18,32 +22,32 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
-                }
+                    loader: "babel-loader",
+                },
             },
             {
                 test: /\.html$/,
                 use: {
-                    loader: "html-loader"
-                }
+                    loader: "html-loader",
+                },
             },
             {
                 test: /\.(s*)css$/,
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
                     "css-loader",
-                    "sass-loader"
-                ]
-            }
-        ]
+                    "sass-loader",
+                ],
+            },
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./public/index.html",
-            filename: "./index.html"
+            filename: "./index.html",
         }),
         new MiniCssExtractPlugin({
-            filename: "assets/[name].css"
-        })
-    ]
+            filename: "assets/[name].css",
+        }),
+    ],
 }
