@@ -6,10 +6,10 @@ import Search from "@components/Search";
 import Categories from "@components/Categories";
 import Carousel from "@components/Carousel";
 import CarouselItem from "@components/CarouselItem";
-import Footer from "../components/Footer";
+import Footer from "@components/Footer";
 
 //styles
-import "../assets/styles/App.scss";
+import "@styles/App.scss";
 
 //Custom hooks
 import useInitialState from "../customhooks/useInitialState";
@@ -39,25 +39,21 @@ export default function App() {
 				</Categories>
 			)}
 
-			{videos.trends.length > 1 && (
-				<Categories title={"Tendencias"}>
-					<Carousel>
-						{videos.trends.map((element) => (
-							<CarouselItem key={element.id} {...element} />
-						))}
-					</Carousel>
-				</Categories>
-			)}
+			<Categories title={"Tendencias"}>
+				<Carousel>
+					{videos.trends.map((element) => (
+						<CarouselItem key={element.id} {...element} />
+					))}
+				</Carousel>
+			</Categories>
 
-			{videos.originals.length > 1 && (
-				<Categories title={"Originales de Platzi video"}>
-					<Carousel>
-						{videos.originals.map((element) => (
-							<CarouselItem key={element.id} {...element} />
-						))}
-					</Carousel>
-				</Categories>
-			)}
+			<Categories title={"Originales de Platzi video"}>
+				<Carousel>
+					{videos.originals.map((element) => (
+						<CarouselItem key={element.id} {...element} />
+					))}
+				</Carousel>
+			</Categories>
 
 			<Footer />
 		</div>

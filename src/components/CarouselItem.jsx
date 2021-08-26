@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 //styles
 import "@styles/components/CarouselItem.scss";
@@ -7,13 +8,7 @@ import "@styles/components/CarouselItem.scss";
 import playIcon from "@static/play-icon.png";
 import plusIcon from "@static/plus-icon.png";
 
-export default function CarouselItem({
-	title,
-	year,
-	duration,
-	cover,
-	contentRating,
-}) {
+function CarouselItem({ title, year, duration, cover, contentRating }) {
 	return (
 		<div className="carousel-item">
 			<img className="carousel-item__img" src={cover} alt={title} />
@@ -36,3 +31,14 @@ export default function CarouselItem({
 		</div>
 	);
 }
+
+//Prop types
+CarouselItem.propTypes = {
+	title: PropTypes.string.isRequired,
+	year: PropTypes.number.isRequired,
+	duration: PropTypes.number.isRequired,
+	cover: PropTypes.string.isRequired,
+	contentRating: PropTypes.string.isRequired,
+};
+
+export default CarouselItem;
