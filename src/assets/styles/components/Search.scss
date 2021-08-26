@@ -1,13 +1,19 @@
 .main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 300px;
-  border-radius: 0px 0px 40px 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 300px;
+	border-radius: 0px 0px 40px 40px;
 }
 
 .main__title {
-  color: white;
-  font-size: 25px;
+	color: white;
+	font-size: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+	.main__description--title {
+		font-size: 30px;
+	}
 }
