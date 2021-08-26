@@ -11,23 +11,13 @@ import Footer from "../components/Footer";
 //styles
 import "../assets/styles/App.scss";
 
+//Custom hooks
+import useInitialState from "../customhooks/useInitialState";
+
+const API = "http://localhost:3000/initalState";
+
 export default function App() {
-	const [videos, setVideos] = useState(null);
-
-	//method to get info from fake api
-	const getInfo = async () => {
-		fetch("http://localhost:3000/initalState")
-			.then((response) => response.json())
-			.then((data) => setVideos(data))
-			.catch((e) => {
-				alert("Hubo un error al intentar obtener la informacion del api");
-				console.log(e);
-			});
-	};
-
-	useEffect(() => {
-		getInfo();
-	}, []);
+	const [videos, setVideos] = useInitialState(API);
 
 	//Loading state
 	if (videos === null) {
