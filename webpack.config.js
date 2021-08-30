@@ -17,6 +17,7 @@ module.exports = {
             "@static": path.resolve(__dirname, "src/assets/static"),
         },
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -50,6 +51,9 @@ module.exports = {
                 }
             }
         ],
+    },
+    devServer: {
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({

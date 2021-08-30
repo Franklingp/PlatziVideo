@@ -16,7 +16,7 @@ import useInitialState from "../customhooks/useInitialState";
 
 const API = "http://localhost:3000/initalState";
 
-export default function App() {
+export default function Home() {
 	const [videos, setVideos] = useInitialState(API);
 
 	//Loading state
@@ -25,7 +25,7 @@ export default function App() {
 	}
 
 	return (
-		<div id="App">
+		<div id="Home">
 			<Header />
 			<Search />
 
