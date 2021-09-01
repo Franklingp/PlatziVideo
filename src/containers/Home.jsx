@@ -15,7 +15,7 @@ function Home({ myList, originals, trends }) {
 		<>
 			<Search />
 
-			{myList.length > 1 && (
+			{myList.length >= 1 && (
 				<Categories title={"Mi lista"}>
 					<Carousel>
 						{myList.map((element) => (

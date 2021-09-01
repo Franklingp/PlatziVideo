@@ -10,47 +10,7 @@ import reducer from "./reducers/index";
 const initialState = {
     "user": {},
     "playing": {},
-    "myList": [
-        {
-            "id": 13,
-            "slug": "tvshow-13",
-            "title": "NCIS: Los Angeles",
-            "type": "Drama",
-            "language": "English",
-            "year": 2010,
-            "contentRating": "16+",
-            "duration": 160,
-            "cover": "http://dummyimage.com/800x600.png/5472FF/ffffff",
-            "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
-        },
-        {
-            "id": 3,
-            "slug": "tvshow-3",
-            "title": "Instinct",
-            "type": "Adventure",
-            "language": "English",
-            "year": 2002,
-            "contentRating": "16+",
-            "duration": 137,
-            "cover": "http://dummyimage.com/800x600.png/302140/ffffff",
-            "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
-        },
-        {
-            "id": 5,
-            "slug": "tvshow-5",
-            "title": "Stargate Atlantis",
-            "type": "Scripted",
-            "language": "English",
-            "year": 2014,
-            "contentRating": "16+",
-            "duration": 194,
-            "cover": "http://dummyimage.com/800x600.png/B36F20/ffffff",
-            "description": "Vestibulum ac est lacinia nisi venenatis tristique",
-            "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4"
-        }
-    ],
+    "myList": [],
     "trends": [
         {
             "id": 2,
