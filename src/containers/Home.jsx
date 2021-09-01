@@ -19,7 +19,7 @@ function Home({ myList, originals, trends }) {
 				<Categories title={"Mi lista"}>
 					<Carousel>
 						{myList.map((element) => (
-							<CarouselItem key={element.id} {...element} />
+							<CarouselItem key={element.id} {...element} isList />
 						))}
 					</Carousel>
 				</Categories>

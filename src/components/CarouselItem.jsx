@@ -23,6 +23,7 @@ function CarouselItem(props) {
 		contentRating,
 		setFavorite,
 		deleteFavorite,
+		isList,
 	} = props;
 
 	//Metod to set favorite
@@ -45,18 +46,21 @@ function CarouselItem(props) {
 						src={playIcon}
 						alt="Play Icon"
 					/>
-					<img
-						className="carousel-item__details--img"
-						src={plusIcon}
-						alt="Plus Icon"
-						onClick={hanldeSetFavorite}
-					/>
-					<img
-						className="carousel-item__details--img"
-						src={removeIcon}
-						alt="Remove Icon"
-						onClick={handleDeleteFavorite}
-					/>
+					{isList ? (
+						<img
+							className="carousel-item__details--img"
+							src={removeIcon}
+							alt="Remove Icon"
+							onClick={handleDeleteFavorite}
+						/>
+					) : (
+						<img
+							className="carousel-item__details--img"
+							src={plusIcon}
+							alt="Plus Icon"
+							onClick={hanldeSetFavorite}
+						/>
+					)}
 				</div>
 				<p className="carousel-item__details--title">{title}</p>
 				<p className="carousel-item__details--subtitle">{`${year} ${contentRating} ${duration} minutes`}</p>
