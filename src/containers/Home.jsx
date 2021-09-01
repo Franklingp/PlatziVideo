@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 //Components
-import Header from "@components/Header";
 import Search from "@components/Search";
 import Categories from "@components/Categories";
 import Carousel from "@components/Carousel";
 import CarouselItem from "@components/CarouselItem";
-import Footer from "@components/Footer";
 
 //styles
 import "@styles/App.scss";
@@ -25,8 +23,7 @@ export default function Home() {
 	}
 
 	return (
-		<div id="Home">
-			<Header />
+		<>
 			<Search />
 
 			{videos.mylist.length > 1 && (
@@ -54,8 +51,6 @@ export default function Home() {
 					))}
 				</Carousel>
 			</Categories>
-
-			<Footer />
-		</div>
+		</>
 	);
 }
