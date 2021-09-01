@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "@styles/components/Login.scss";
 
 //Icons
@@ -31,7 +32,8 @@ export default function Login() {
 					</div>
 				</section>
 				<p className="login__container--register">
-					No tienes ninguna cuenta <a href="">Regístrate</a>
+					No tienes ninguna cuenta
+					<Link to="/register">Registrate</Link>
 				</p>
 			</section>
 		</section>
