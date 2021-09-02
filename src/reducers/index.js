@@ -18,7 +18,7 @@ const reducer = (state, action) => {
                 ...state,
                 myList: state.myList.filter(item => item.id !== action.payload)
             }
-        case ("LOGIIN_REQUEST"):
+        case ("LOGIN_REQUEST"):
             return {
                 ...state,
                 user: action.payload

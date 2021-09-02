@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 //styles
 import "@styles/components/Header.scss";
@@ -7,8 +8,14 @@ import "@styles/components/Header.scss";
 //Icons
 import logo from "@static/logo-platzi-video-BW2.png";
 import userIcon from "@static/user-icon.png";
+import gravatar from "@utils/gravatar";
 
-export default function Header() {
+function Header(props) {
+	const { user } = props;
+
+	//validate user
+	const isUser = Object.keys(user).length > 0;
+
 	return (
 		<header className="header">
 			<Link to="/">
@@ -16,7 +23,11 @@ export default function Header() {
 			</Link>
 			<div className="header__menu">
 				<div className="header__menu--profile">
-					<img src={userIcon} alt="user" />
+					{isUser ? (
+						<img src={gravatar(user.email)} alt="user" />
+					) : (
+						<img src={userIcon} alt="user" />
+					)}
 					<p>Perfil</p>
 				</div>
 				<ul>
@@ -31,3 +42,9 @@ export default function Header() {
 		</header>
 	);
 }
+
+const mapStateToProps = (state) => ({
+	user: state.user,
+});
+
+export default connect(mapStateToProps)(Header);
