@@ -42,11 +42,16 @@ function Header(props) {
 				</div>
 				<ul>
 					{hasUser ? (
-						<li>
-							<a href="#logout" onClick={handleLogout}>
-								Cerrar sesion
-							</a>
-						</li>
+						<>
+							<li>
+								<a href="/">{user.nombre}</a>
+							</li>
+							<li>
+								<a href="#logout" onClick={handleLogout}>
+									Cerrar sesion
+								</a>
+							</li>
+						</>
 					) : (
 						<li>
 							<Link to="/login">Iniciar sesion</Link>
