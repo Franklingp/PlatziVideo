@@ -8,7 +8,9 @@ export default function NotFound() {
 	return (
 		<div className="notFound-container">
 			<h1 className="notFound-title">404: Ups no se ha encontrado la ruta</h1>
-			<Link to="/">Volver al Home</Link>
+			<Link className="notFound-link" to="/">
+				Volver al Home
+			</Link>
 		</div>
 	);
 }
