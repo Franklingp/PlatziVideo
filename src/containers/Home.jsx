@@ -15,7 +15,7 @@ function Home({ myList, originals, trends }) {
 	return (
 		<>
 			<Header />
-			<Search />
+			<Search isHome />
 			{myList.length >= 1 && (
 				<Categories title={"Mi lista"}>
 					<Carousel>
