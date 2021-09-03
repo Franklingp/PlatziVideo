@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "@styles/components/Player.scss";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 //components
@@ -37,6 +38,13 @@ function Player(props) {
 	);
 }
 
+//Prop types
+Player.propTypes = {
+	getSourceVideo: PropTypes.func.isRequired,
+	playing: PropTypes.object.isRequired,
+};
+
+//redux
 const mapStateToProps = (state) => ({
 	playing: state.playing,
 });

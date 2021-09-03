@@ -30,7 +30,7 @@ export const getSourceVideo = payload => ({
     payload
 })
 
-export const setSerach = payload => ({
+export const setSearch = payload => ({
     type: "SET_SEARCH",
     payload
 })

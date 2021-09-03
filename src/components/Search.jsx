@@ -1,14 +1,15 @@
 import React from "react";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 //styles
 import "../assets/styles/components/Search.scss";
 
 //actions
-import { setSerach } from "../actions";
+import { setSearch } from "../actions";
 
-function Search({ isHome, setSerach }) {
+function Search({ isHome, setSearch }) {
 	//Input classname validation
 	const inputClass = classNames("input", {
 		isHome,
@@ -16,7 +17,7 @@ function Search({ isHome, setSerach }) {
 
 	//Handle search
 	const handleChange = (e) => {
-		setSerach(e.target.value);
+		setSearch(e.target.value);
 	};
 
 	return (
@@ -32,8 +33,14 @@ function Search({ isHome, setSerach }) {
 	);
 }
 
+//Prop types
+Search.propTypes = {
+	isHome: PropTypes.bool,
+	setSearch: PropTypes.func.isRequired,
+};
+
 const mapDisplayToProps = {
-	setSerach,
+	setSearch,
 };
 
 export default connect(null, mapDisplayToProps)(Search);

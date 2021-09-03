@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 //Components
 import Search from "@components/Search";
@@ -61,6 +62,15 @@ function Home({ myList, originals, trends, search }) {
 	);
 }
 
+//prop types
+Home.propTypes = {
+	search: PropTypes.object.isRequired,
+	myList: PropTypes.array.isRequired,
+	originals: PropTypes.array.isRequired,
+	trends: PropTypes.array.isRequired,
+};
+
+//redux
 const mapStateToProps = (state) => ({
 	search: state.search,
 	myList: state.myList,

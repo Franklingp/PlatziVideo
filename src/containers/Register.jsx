@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "@styles/components/Register.scss";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 //actions
 import { registerRequest } from "../actions";
@@ -69,6 +70,12 @@ function Register(props) {
 	);
 }
 
+//PropTypes
+Register.propTypes = {
+	registerRequest: PropTypes.func.isRequired,
+};
+
+//redux
 const mapDispatchToProps = {
 	registerRequest,
 };

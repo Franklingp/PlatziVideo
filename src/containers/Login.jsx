@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "@styles/components/Login.scss";
+import PropTypes from "prop-types";
 
 //Icons
 import googldeIcon from "@static/google-icon.png";
@@ -86,6 +87,11 @@ function Login(props) {
 		</>
 	);
 }
+
+//propTypes
+Login.propTypes = {
+	loginRequest: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = {
 	loginRequest,

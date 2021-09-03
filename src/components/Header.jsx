@@ -74,6 +74,8 @@ function Header(props) {
 Header.propTypes = {
 	user: PropTypes.object.isRequired,
 	logoutRequest: PropTypes.func.isRequired,
+	isLogin: PropTypes.bool,
+	isRegister: PropTypes.bool,
 };
 
 //Redux
