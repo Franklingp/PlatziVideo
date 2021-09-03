@@ -40,6 +40,17 @@ const reducer = (state, action) => {
                     state.originals.find(item => item.id === Number(action.payload)) ||
                     {},
             }
+        case "SET_SEARCH":
+            return {
+                ...state,
+                search: {
+                    input: action.payload,
+                    list: [
+                        ...state.trends.filter(item => item.title.toLowerCase().includes(action.payload.toLowerCase())),
+                        ...state.originals.filter(item => item.title.toLowerCase().includes(action.payload.toLowerCase()))
+                    ]
+                }
+            }
         default:
             return state;
     }

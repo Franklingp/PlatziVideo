@@ -10,6 +10,10 @@ import reducer from "./reducers/index";
 const initialState = {
     "user": {},
     "playing": {},
+    "search": {
+        "input": "",
+        "list": []
+    },
     "myList": [],
     "trends": [
         {
