@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 //styles
 import "@styles/components/Header.scss";
@@ -15,7 +16,7 @@ import gravatar from "@utils/gravatar";
 import { logoutRequest } from "../actions";
 
 function Header(props) {
-	const { user, logoutRequest } = props;
+	const { user, logoutRequest, isLogin, isRegister } = props;
 
 	//validate user
 	const hasUser = Object.keys(user).length > 0;
@@ -26,8 +27,14 @@ function Header(props) {
 		alert("Se ha cerrado sesion exitosamente");
 	};
 
+	//validation the background header
+	const classHeader = classNames("header", {
+		isLogin,
+		isRegister,
+	});
+
 	return (
-		<header className="header">
+		<header className={classHeader}>
 			<Link to="/">
 				<img className="header__img" src={logo} alt="Platzi Video" />
 			</Link>
